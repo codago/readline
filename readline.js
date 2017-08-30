@@ -5,17 +5,17 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.setPrompt('tulis kalimatmu disini >')
+rl.setPrompt('tulis kalimatmu disini >');
  rl.prompt();
 
- rl.on('line',(line) => {
+ rl.on('line',function(line){
    console.log('hasil konversi : '+sentencesManipulation(line.trim()))
-
   rl.prompt();
 
-}).on('close',() => {
+rl.on('line',function(close){
     console.log('Good Bye!');
     process.exit(0);
+  })
   });
 
 
