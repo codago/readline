@@ -32,6 +32,9 @@ const rl = readline.createInterface({
 rl.prompt();
 
 rl.on('line', (line) => {
+  if(line.trim().toLowerCase() === 'Good bye!'.toLowerCase()){
+    process.exit(0);
+  }
   console.log(sentencesManipulation(line.trim()))
   rl.prompt();
 }).on('close', () => {
