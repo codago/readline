@@ -35,24 +35,24 @@ const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
-  prompt: 'Tulis kalimatmu disini> '
-});
 
+});
+rl.setPrompt( 'Tulis kalimatmu disini> ')
 rl.prompt();
 
-rl.on('line', (answer) => {
-  switch (answer.trim()) {
+rl.on('line',function (answer) {
+  switch (answer.trim()){
     case (answer):
       console.log('hasil konversi:'+sentencesmanipulation(answer));
       break;
+}
 
-  }
   rl.prompt();
-}).on('close', () => {
+rl.on('line',function(close)  {
   console.log('good bye');
   process.exit(0);
 });
-
+})
 
 /*const readline = require('readline');
 
