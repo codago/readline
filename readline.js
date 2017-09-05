@@ -31,39 +31,13 @@ rl.setPrompt('Tulis kalimatmu disini > ');
 rl.prompt();
 
 rl.on('line', (answer) => {
-  switch (answer.trim()) {
-    case (answer):
-      console.log(`The sentence you put will be turned into: ` +sentenceManipulation(answer));
-      break;
-    
-  }
-  rl.prompt();
+  if (answer.trim() === "Goodbye") {
+    rl.close();
+    } else {
+    console.log(`The sentence you put will be turned into: ` +sentenceManipulation(answer));
+    console.log("tulis kalimatmu disini >");
+    }
 }).on('close', () => {
   console.log('Good bye madafaka!');
   process.exit(0);
 });
-
-
-
-
-
-
-
-// rl.on('Input a sentence here! ', (answer) => {
-// rl.prompt();
-//
-//   if ( answer === 'Good bye!') {
-//     rl.close();
-//   } else {
-//     rl.question ("Input another sentences!");
-//     rl.prompt();
-//   }
-//
-//   console.log(`The sentence you put will be turned into: ` +sentenceManipulation(answer));
-// });
-//
-// rl.on('close', function() {
-//
-//   console.log('well......');
-//   process.exit(0);
-// })
