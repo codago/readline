@@ -38,10 +38,14 @@ return hasil.join(''); //mengembalikan hasil lalu di gabungkan (join)
   rl.setPrompt('tulis kalimatmu disini >') //set petanyaan
    rl.prompt();
 
-   rl.on('line',(line) => {
-     console.log('hasil konversi : '+sentencesManipulation(line.trim())) //membaca (output), trim metode menghapus spasi dari kedua sisi string.
+   rl.on('line', (answer) => {
+   if (answer.trim() === "Goodbye"|| "bye" || "Good bye") {
+     rl.close();
+     } else {
+     console.log(`The sentence you put will be turned into: ` +sentencesManipulation(answer));
+     console.log("tulis kalimatmu disini >");
+ }
 
-    rl.prompt();
   }).on('close',() => {
       console.log('Good Bye!');
       process.exit(0);
